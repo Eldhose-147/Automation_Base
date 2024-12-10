@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- <include file="$(find navigation)/launch/gazebo_rviz.launch" /> -->
+	<include file="$(find freenect_launch)/launch/freenect.launch" />
+	<include file="$(find depthimage_to_laserscan)/launch/point2laser.launch" />
+	<!-- <include file="$(find navigation)/launch/transformer.launch" /> -->
+	<include file="$(find gmapping)/launch/gmapping.launch" />
+	<node name="base_odometry" pkg="navigation" type="tranformation.py" output="screen"/>
+	<node name="odometry_publisher" pkg="navigation" type="odom_transform.py" output="screen"/>
+
+
+</launch>
